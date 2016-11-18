@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id='example'>
+        <async-example>{{ message }}</async-example>
+    </div>
+</body>
+<script type="text/javascript" src="/Users/wm/node_modules/vue/dist/vue.js"></script>
+<script>
+
+Vue.component('async-example', function (resolve, reject) {
+    setTimeout(function () {
+        resolve({
+            template: '<div>I need tasks ~!</div>'
+        })
+    }, 6000)
+})
+
+new Vue(
+    {
+        el : '#example',
+        data: {
+            message :''
+        }
+    }
+)
+
+</script>
+</html>
