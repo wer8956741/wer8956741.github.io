@@ -2,34 +2,58 @@
 <html>
 <head>
     <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./common.css">
 </head>
 <body>
-    <div id='example'>
-        <async-example>{{ message }}</async-example>
+<div class="dialog large" style="margin-top: -287.5px; margin-left: -450px;"><div class="dialog-hd"><h3>退款详情</h3><a class="ico-cls JSCloseDG" href="javascript:;">关闭</a></div><div class="dialog-bd"><div id="refundDgBodyId">
+    <div class="info-box" id="detailRefundDetailPart">
+        <div class="info-hd"><h3>退款单信息</h3></div>
+        <div class="info-bd">
+            <div class="table-wrp fix-thead with-border">
+                <table class="table">
+                    <tbody><tr><th>退款单号</th><td id="detailRefundNo">2004582003201610160522287566</td><th>商户退款单号</th><td id="detailMerchantRefundNo">201610162266953087208433</td></tr>
+                    <tr><th>交易单号</th><td id="detailTradeNo">4004582003201610015472901773</td><th>商户单号</th><td id="detailMerchantTradeNo">201610012266303767238433</td></tr>
+                </tbody></table>
+            </div>
+            <div class="table-wrp fix-thead with-border">
+                <table class="table">
+                    <tbody><tr><th>订单金额(元)</th><td id="detailTotalAmount">1.00</td><th>申请退款金额(元)</th><td id="detailTotalRefundAmount">1.00</td></tr>
+                    <tr class="J_paymentRefundChanl"><th>应结订单金额(元)</th><td id="settlePaymentAmount">1.00</td><th>退款金额(元)</th><td id="settlePaymentAmountRefund">1.00</td></tr>
+                    <tr class="J_paymentRefundChanl"><th>零钱扣款金额(元)</th><td id="detailAccountBalancePaymentAmount">0.00</td><th>退还零钱金额(元)</th><td id="detailAccountBalancePaymentAmountRefund">0.00</td></tr>
+                    <tr class="J_paymentRefundChanl"><th>银行卡扣款金额(元)</th><td id="detailBankCardPaymentAmount">1.00</td><th>退还银行卡金额(元)</th><td id="detailBankCardPaymentAmountRefund">1.00</td></tr>
+                    <tr class="J_paymentRefundChanl"><th>充值券金额(元)</th><td id="couponsCashPaymentAmount">0.00</td><th>退还充值券金额(元)</th><td id="couponsCashPaymentAmountRefund">0.00</td></tr>
+                </tbody></table>
+            </div>
+            <div class="table-wrp fix-thead with-border">
+                <table class="table">
+                    <tbody><tr><th>退款扣款资金</th><td id="detailRefundSourceName">交易未结算金额</td><th>退款方式</th><td id="detailRefundTypeWayName">原路退回</td></tr>
+                    <tr class="detail_has_bank_info"><th>开户银行</th><td id="detailBankName">工商银行</td><th>卡类型</th><td id="detailCardTypeName">信用卡</td></tr>
+                    <tr class="detail_has_bank_info"><th>收款银行卡号</th><td colspan="3" id="detailBankAccountNum">XXXXXXXXXXXXXXX5176</td></tr>
+                    <tr class="detail_has_payer_info hide"><th>收款账户</th><td colspan="3" id="detailPayerOpenId"></td></tr>
+                </tbody></table>
+            </div>
+            <div class="table-wrp fix-thead with-border">
+                <table class="table">
+                    <tbody><tr><th>退款申请人</th><td id="detailRefundApplicant">接口提交</td><th>提交时间</th><td id="detailCreateTime">2016-10-16 14:25:38</td></tr>
+                    <tr><th>退款状态</th><td id="detailRefundStatusName"><span class="gapr">退款成功</span></td><th>退款完成时间</th><td id="detailFinishReturnTime">2016-10-18 12:04:03</td></tr>
+                    <tr><th>退款说明</th><td colspan="3" id="detailRefundRemark"></td></tr>
+                    <tr class="hide"><th>退款权限说明</th><td colspan="3" id="refundRightTips"></td></tr>
+                </tbody></table>
+            </div>
+        </div>
     </div>
-    <div>
-        women de zu guo xiang hua duo .sdasaassasds
+
+    <div class="info-box hide" id="detailAuditFlowPart">
+        <div class="info-hd"><h3>审批记录</h3></div>
+        <div class="info-bd" id="detailAuditFlowList">
+        </div>
     </div>
+
+    <div class="info-box" id="detailRefundFlowPart">
+        <div class="info-hd"><h3>退款单变更记录</h3></div>
+        <div class="info-bd" id="detailRefundLogList"><div class="status-list change-record"><ul><li><h4 class="clr"><span class="ico-dot green">●</span><div class="txt-col col4 fr">&nbsp;</div><div class="txt-col col1">2016-10-16 14:25:38</div><div class="txt-col col2">审核通过待处理</div><div class="txt-col col3">创建退款订单</div></h4></li><li><h4 class="clr"><span class="ico-dot green">●</span><div class="txt-col col4 fr">&nbsp;</div><div class="txt-col col1">2016-10-16 14:25:40</div><div class="txt-col col2">系统退款中</div><div class="txt-col col3">&nbsp;</div></h4></li><li class="last"><h4 class="clr"><span class="ico-dot green">●</span><div class="txt-col col4 fr">&nbsp;</div><div class="txt-col col1">2016-10-18 12:04:03</div><div class="txt-col col2">退款成功</div><div class="txt-col col3">&nbsp;</div></h4></li></ul></div></div>
+    </div>
+</div></div><div class="dialog-ft"></div></div>
 </body>
-<script type="text/javascript" src="/Users/wm/node_modules/vue/dist/vue.js"></script>
-<script>
-
-Vue.component('async-example', function (resolve, reject) {
-    setTimeout(function () {
-        resolve({
-            template: '<div>I need tasks ~!</div>'
-        })
-    }, 6000)
-})
-
-new Vue(
-    {
-        el : '#example',
-        data: {
-            message :''
-        }
-    }
-)
-
-</script>
 </html>
